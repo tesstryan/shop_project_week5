@@ -19,3 +19,13 @@
 
 
 <%= link_to 'Back to Homepage', products_url %><br/>
+
+
+<h3>Other items you may be interested in: </h3>
+
+<% @random.each do |random_product| %>
+
+<%= image_tag(random_product.image) %> <br>
+<%= random_product.title %>
+<%= number_to_currency(random_product.price) %><br>
+<% end %>
