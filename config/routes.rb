@@ -3,8 +3,7 @@ ShoppingCart::Application.routes.draw do
 
   resources :carts
 
-  get "store/index"
-  root 'store#index', as: 'store'
+  root 'products#index', as: 'store'
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

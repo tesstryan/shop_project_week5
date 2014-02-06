@@ -7,38 +7,27 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Product.delete_all
-Product.create!(title: 'CoffeeScript',
+Product.create!(title: 'Unicorn Meat',
   description: 
     %{<p>
-        CoffeeScript is JavaScript done right. It provides all of JavaScript's
-	functionality wrapped in a cleaner, more succinct syntax. In the first
-	book on this exciting new language, CoffeeScript guru Trevor Burnham
-	shows you how to hold onto all the power and flexibility of JavaScript
-	while writing clearer, cleaner, and safer code.
+        Unicorn Meat is a delicious and nutricious meal that is easy to make. Just add sprinkles and you have a fully nutricious meal. 
       </p>},
-  image:   'cs.jpg',    
-  price: 36.00)
-# . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0',
-  description:
-    %{<p>
-        Ruby is the fastest growing and most exciting dynamic language
-        out there. If you need to get working programs delivered fast,
-        you should add Ruby to your toolbox.
-      </p>},
-  image: 'ruby.jpg',
-  price: 49.95)
-# . . .
+  image:   'unicorn.jpg',    
+  price: 15.00)
 
-Product.create!(title: 'Rails Test Prescriptions',
+Product.create!(title: 'Baconnaise',
   description: 
     %{<p>
-        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
-        Rails applications, covering Test-Driven Development from both a
-        theoretical perspective (why to test) and from a practical perspective
-        (how to test effectively). It covers the core Rails testing tools and
-        procedures for Rails 2 and Rails 3, and introduces popular add-ons,
-        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
+        Our newest invention, Baconnaise, is the Ultimate Bacon Flavored Spread. Our Baconnaise is the best way to keep your sandwiches, salads, burgers, fries, dips and more in bacony goodness for the whole year. 
       </p>},
-  image: 'rtp.jpg',
-  price: 34.95)
+  image:   'baconnaise.jpg',    
+  price: 4.99)
+
+Product.create!(title: 'Batshelf',
+  description: 
+    %{<p>
+        Is Batman your favorite super hero? Then the Batshelf is for you. Stretching three feet long and 2 feet tall, this is a great addition to any wall in your house.
+        </p>}, 
+  image:   'batshelf.jpg',    
+  price: 165.75)
+
