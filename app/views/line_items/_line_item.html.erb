@@ -1,14 +1,16 @@
 <table>
 	<tr>
-		<th>Quantity</th>
-		<th>Product</th>
-		<th>Price</th>
+		<th>Quantity Ordered</th>
+		<th>Product Name</th>
+		<th>Individual Cost</th>
+		<th>Total Line Cost</th>
+
 	</tr>
 
     <tr>
-      <td><%= line_item.quantity %>&times;</td>
+      <td><%= line_item.quantity %></td>
       <td><%= line_item.product.title %></td>
-      <td><%= line_item.product.title %></td>
+      <td><%= number_to_currency(line_item.product.price) %></td>
       <td><%= number_to_currency(line_item.total_price) %></td>
     </tr>
 </table>
