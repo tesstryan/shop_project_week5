@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShoppingCart</title>
+  <title>Random Hunt</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -22,11 +22,11 @@
   <header>
     
     <ul>
-        <li class="site_name"><h2>RANDOM HUNT</h2></li>
+        <li class="site_name"><h2><%= link_to "RANDOM HUNT CO.", 'root_url' %></h2></li>
         <li><%= link_to "WEAR", '#' %></li>
         <li><%= link_to "EAT", '#' %></li>
-        <li><%= link_to "HANG", '#' %></li>
         <li><%= link_to "PLAY", '#' %></li>
+        <li><%= link_to "HANG", '#' %></li>
       </ul>
   </header>  
 
