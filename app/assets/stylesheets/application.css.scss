@@ -35,12 +35,17 @@ header {
 			padding-right: 5px;
 
 			a { text-decoration: none;
-				color: black;
-				&:visited { text-decoration: none}
-				&:active { color: orange}
-				&:link { color: orange}
-
+				color: black; 
+				
+				&:hover { color: orange}
+				
 			}
+				
+				
+				
+				
+
+			
 
 
 			h2 {
