@@ -20,7 +20,36 @@ img {
 	height: 150px;
 }
 
-h2 {
-	letter-spacing:4px;
-	font-size: 40px;
+
+header {
+
+	ul {
+		font-size: 15px;
+		
+
+		li {
+			display: inline-block;
+			text-decoration: none;
+			vertical-align: center;
+			letter-spacing: 1px;
+			padding-right: 5px;
+
+			a { text-decoration: none;
+				color: black;
+				&:visited { text-decoration: none}
+				&:active { color: orange}
+				&:link { color: orange}
+
+			}
+
+
+			h2 {
+				letter-spacing:4px;
+				font-size: 40px; 	
+			}
+
+
+
+		}	
+	}
 }
