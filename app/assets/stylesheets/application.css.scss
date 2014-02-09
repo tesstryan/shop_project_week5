@@ -240,9 +240,14 @@ section {
 
 			.button_to_cart {
 				color: white;
+                font-family: 'Lato', sans-serif;
+                font-size: 14px;
 				background-color: orange;
 				text-decoration: none;
 				padding: 5px;
+                outline: 0px;
+                outline-style:none;
+                border: 0;
 				padding-left: 8px;
 				padding-right: 8px;
 				// box-shadow: 1px 1px 1px darken(orange, 10%); 
