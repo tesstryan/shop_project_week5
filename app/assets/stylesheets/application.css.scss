@@ -54,14 +54,6 @@ footer {
 }
 
 // Everything else
-
-.wrap {
-    @extend %container;
-    padding: 20px 0 0 0;
-    font-family: 'Lato', sans-serif;
-    margin-top: 30px;
-}
-
 @mixin columnify($num_cols) {
     width: $col_width * $num_cols + $gutter_width * ($num_cols - 1);
 }
@@ -70,69 +62,87 @@ footer {
     margin-left: ($col_width + $gutter_width) * $num_cols;
 }
 
-nav {
-    font-size: 0;
 
-    .header_link {
-	   	text-decoration: none;
-	    color: black;
-	    	&:hover { color: black}
-			&:active { color: black;}
-    }
+.wrap {
+    @extend %container;
+    padding: 20px 0 0 0;
+    font-family: 'Lato', sans-serif;
+    margin-top: 30px;
 
     h2 {
-    display: inline;    
+    letter-spacing: 4px;
     font-size: 30px;
     @include columnify(5);
-    letter-spacing:4px;
-
-    }
-
-    .nav_links {
-       display: inline;
-       @include offset(2);
-
-
+    text-decoration: none;
+    color: black;
+    
     a {
-        @include columnify(1);
+    &:link {
         text-decoration: none;
-        text-align: right;
-        color: black; 
-        letter-spacing: 1px;
-        font-size: 14px;
-        background-color: white;
-        margin-right: $gutter_width;
-        
-        &:nth-of-type(5n) {
-        margin-right: 0;
-        }
+    }    
+    &:visited {
+        color: black;
+        text-decoration: none;
+    }    
+    &:active {
+        color: black;
+        text-decoration: none;} 
 
-        &:hover { color: orange}
+    &:hover {
+        color: black;}
+    }}
 
-        .cart_count {
-        	display: inline;
-        	font-size: 11px;
-        	border: 1px solid black;
-        	color: black;
-        	padding-left: 3px;
-            margin-left: 3px;
-        	padding-right: 2px;
-        	border-radius: 2px;
-        	text-align: center;
-        	&:hover { border-color: orange;
-        		color: orange}
+    nav {
+        font-size: 0;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        @include offset(7);
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            letter-spacing: 2px;
+            background:white;
+            text-align: right;
+            font-size: 14px;
+            @include columnify(1);
+            margin-right: $gutter_width;
+
+            &:nth-of-type(5n) {
+                margin-right: 0;}
+
+            &:active {
+                color: black;
+                text-decoration: none;} 
+
+            &:hover {
+                color: orange;}
+            
+            .cart_count {
+            	display: inline;
+            	font-size: 10px;
+            	border: 1.5px solid black;
+            	color: black;
+            	padding-left: 3px;
+                margin-left: 2px;
+            	padding-right: 2px;
+            	border-radius: 2px;
+            	text-align: center;
+
+            	
+                &:hover { border-color: orange;
+            		color: orange}
+            }
         }
+           
     }
-    }   
-}
+    }
 
 .store {
     font-size: 0;
     margin-top: 40px;
-
 }
-
-
 
 section {
     @include columnify(4);

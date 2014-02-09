@@ -20,20 +20,20 @@
 <!-- END:head -->
 
 <body>
-  <div class="container">
     <div class="wrap">
-
+       <h2><%= link_to "RANDOM HUNT CO.", products_url %></h2>
+      
       <nav>
-          <h2><%= link_to "RANDOM HUNT CO.", products_url, :class => "header_link" %></h2>
-          <div class="nav_links">
               <a href="#">WEAR</a>
               <a href="#">EAT</a>
               <a href="#">PLAY</a> 
               <a href="#">HANG</a>
               <% @cart = Cart.all  %>
               <a href="#">CART<div class="cart_count"><%= @cart.count %></div></a>
-          </div>  
       </nav>
+
+
+    
 
 
           <%= yield %>
@@ -44,6 +44,6 @@
     </div>
 
 
-  </div>
+
 </body>
 </html>
