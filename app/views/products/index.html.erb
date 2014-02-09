@@ -1,3 +1,5 @@
+
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -8,7 +10,9 @@
     <section>
 	  
 	        <div class="image">
+
 	           <%= link_to image_tag(product.image), product_url(product.id) %>
+
 	        </div>
 	            
 	        <div class="name_price">
@@ -17,7 +21,12 @@
 	      
      </section>
       <% end %> 
+
+	<footer>
+	<p>RANDOM HUNT CO. © 2014</p>
+	</footer>
 </div>
+
 
 
 

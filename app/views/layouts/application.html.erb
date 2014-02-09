@@ -28,19 +28,22 @@
               <a href="#">EAT</a>
               <a href="#">PLAY</a> 
               <a href="#">HANG</a>
-              <% @cart = Cart.all  %>
-              <a href="#">CART<div class="cart_count"><%= @cart.count %></div></a>
+              <% @line_count = LineItem.all  %>
+              <% @cart = Cart.last %>
+              <% if @cart == nil %>
+               <a href="#">CART<div class="cart_count"><%= @line_count.count %></div></a>
+              <% else %>
+              <a href="/carts/<%= @cart.id %>">CART<div class="cart_count"><%= @line_count.count %></div></a>
+              <% end %>
+
       </nav>
-
-
-    
 
 
           <%= yield %>
     
- <!--    <footer>
-      <p>RANDOM HUNT CO. © 2014</p>
-    </footer> -->
+
+
+
     </div>
 
 

@@ -1,3 +1,6 @@
+<script src="/assets/jquery.js" type="text/javascript"></script>
+<script src="/assets/jquery.imageLens.js" type="text/javascript"></script>
+
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
@@ -5,7 +8,8 @@
 <div class="details">
 
 	<div class="details_image">
-
+		
+		<script>$(".details_image").imageLens({ imageSrc: "/assets/<%= @product.image %>"});</script>
 	 	<%= image_tag(@product.image) %>
 
 	 </div>
@@ -14,9 +18,12 @@
 
 		  <h3><%= @product.title %></h3>
 
-		  <p><%= sanitize(@product.description) %></p>
+		  <p><%= sanitize(@product.description) %> <br>
+		  <p>Item #: <%= rand(2233...9897) %></p></p>
 
 		  <p class="details_price">Price: <%= number_to_currency(@product.price) %></p>
+
+
 
 		<div class="button">
 		<%= link_to 'Add to Cart', line_items_path(product_id: @product), :method => :post, :class => "button_to_cart"  %>
@@ -43,5 +50,9 @@
 	        </div>    
 	      
      </section>
-      <% end %> 
+      <% end %>
+
+    <footer>
+	<p>RANDOM HUNT CO. © 2014</p>
+	</footer> 
 </div>
