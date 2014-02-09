@@ -18,21 +18,35 @@
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <!-- END:head -->
+
 <body>
-<!-- START_HIGHLIGHT -->
-  <header>
+    <div class="wrap">
+       <h2><%= link_to "RANDOM HUNT CO.", products_url %></h2>
+      
+      <nav>
+              <a href="#">WEAR</a>
+              <a href="#">EAT</a>
+              <a href="#">PLAY</a> 
+              <a href="#">HANG</a>
+              <% @line_count = LineItem.all  %>
+              <% @cart = Cart.last %>
+              <% if @cart == nil %>
+               <a href="#">CART<div class="cart_count"><%= @line_count.count %></div></a>
+              <% else %>
+              <a href="/carts/<%= @cart.id %>">CART<div class="cart_count"><%= @line_count.count %></div></a>
+              <% end %>
+
+      </nav>
+
+
+          <%= yield %>
     
-    <ul>
-        <li class="site_name"><h2><%= link_to "RANDOM HUNT CO.", 'root_url' %></h2></li>
-        <li><%= link_to "WEAR", '#' %></li>
-        <li><%= link_to "EAT", '#' %></li>
-        <li><%= link_to "PLAY", '#' %></li>
-        <li><%= link_to "HANG", '#' %></li>
-      </ul>
-  </header>  
 
 
-      <%= yield %>
+
+    </div>
+
+
 
 </body>
 </html>
