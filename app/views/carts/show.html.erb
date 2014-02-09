@@ -4,15 +4,32 @@
 
 <div class="cart_page">
 
-	<h2>Items currently in your cart</h2>
+	<h4>Items currently in your cart</h4>
 
 	<%= render(@cart.line_items) %>
 
-<div class="cart_totals">
-	<h3>Cart Totals</h3>
 	
-	Total <%= number_to_currency(@cart.total_price) %>
-
+<div class="cart_totals">
+	<div class="totals">
+		<h4>Cart Totals</h4>
+		<table>
+			<tr>
+			  <td>Taxes:</td>
+			  <td class="table_right"><%= number_to_currency((@cart.total_price)* 0.08) %></td>		
+			  </tr>
+			<tr class="table_bottom">
+			  <td>Shipping:</td>
+			  <td class="table_right"><%= number_to_currency((@cart.total_price)* 0.10) %></td>		
+			</tr>
+			<tr>
+			  <td>Total:</td>
+			  <td class="table_right"><%= number_to_currency(@cart.total_price) %></td>		
+			  </tr>			
+		</table>
+	</div>
+	<div class="checkout">
+		<%= link_to 'Checkout', @cart, method: :delete, :class => "button_to_checkout", data: { confirm: 'Are you sure?' }%>
+	</div>
 </div>
 
 <br><br>

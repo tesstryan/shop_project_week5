@@ -12,7 +12,7 @@
 
 	 <div class="details_text">
 
-		  <h2><%= @product.title %></h2>
+		  <h3><%= @product.title %></h3>
 
 		  <p><%= sanitize(@product.description) %></p>
 
@@ -27,7 +27,7 @@
 </div>
 
 
-<h3>Having found what you've been hunting for? Check out these other items: </h3>
+<h3>Haven't found what you've been hunting for? Check out these other items: </h3>
 
 <div class="store">
     
@@ -35,7 +35,7 @@
     <section>
 	  
 	        <div class="image">
-	           <%= image_tag(random_product.image) %>
+	           <%= link_to image_tag(random_product.image), product_url(random_product.id) %>
 	        </div>
 	            
 	        <div class="name_price">

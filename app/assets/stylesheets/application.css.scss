@@ -221,7 +221,7 @@ section {
 		.details_price{font-size: 16px;
 			margin-top: 20px;}
 		
-		h2 {font-size: 25px;
+		h3 {font-size: 30px;
 			margin-bottom: 15px;
 		}
 
@@ -257,30 +257,88 @@ section {
 
 .cart_page {
     margin-top: 50px;
+    h4 {font-size: 20px;}
+
+
 
     .cart_table {
         display: inline-block;
         margin-top: 30px;
-        @include columnify(8);
+        @include columnify(7);
+ 
 
-        th, td{
-            width: 25%;
-            text-align: left;
+
+
+        th{
+            padding: 5px;
+            text-align: center;
+            border: 1px solid lightgray;
         }
+        td {
+            vertical-align: top;
+            padding-top: 23px;
+            text-align: center;
+            border: 1px solid lightgray;}
+
+        .image {
+            text-align: center;
+
+            vertical-align: top;
+            padding-top: 0;
+        img {
+            height: 60px;
+        }}
     }
 
-    .cart_totals {
-        display: inline-block;
-        @include columnify(4);
-        border: 1px lightgray solid;
-        padding: 15px;
+}
 
-        h3 {
-            text-align: center;
-            font-size: 20px;
-            padding-bottom: 10px;
+.cart_totals {
+    display: inline-block;
+    @include columnify(4);
+    border: 1px lightgray solid;
+    padding: 15px;
+    vertical-align: top;
+    margin-left: 97px;
+    margin-top: -110px;
+    h4 {
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .totals 
+        table {
+            text-decoration: none;
+            font-size: 16px;
+            width: 200px;
+            margin-left: 30px;
+            line-height: 20px;
+
+            .table_right {
+                text-align: right;
+            }
+            .table_bottom {
+                border-bottom: 1px solid gray;   
+            }
         }
 
+    .checkout {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+}
+
+    
+
+    .button_to_checkout {
+    color: white;
+    background-color: green;
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px green solid;
     }
 
 
@@ -299,7 +357,9 @@ section {
         }
 
     }
-}
+
+
+
 
 
 
