@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @carts = Cart.all
+  
     @random = Product.all.sample(3)
   end
 

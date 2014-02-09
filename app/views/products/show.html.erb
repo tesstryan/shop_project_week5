@@ -2,30 +2,46 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+<div class="details">
+
+	<div class="details_image">
+
+	 	<%= image_tag(@product.image) %>
+
+	 </div>
+
+	 <div class="details_text">
+
+		  <h2><%= @product.title %></h2>
+
+		  <p><%= sanitize(@product.description) %></p>
+
+		  <p class="details_price">Price: <%= number_to_currency(@product.price) %></p>
+
+		<div class="button">
+		<%= link_to 'Add to Cart', line_items_path(product_id: @product), :method => :post, :class => "button_to_cart"  %>
+		</div>
+		
+	</div>
+
+</div>
 
 
-  <%= @product.title %>
+<h3>Having found what you've been hunting for? Check out these other items: </h3>
 
-  <%= sanitize(@product.description) %>
-
-  <%= image_tag(@product.image) %>
-
-
-
-  <%= number_to_currency(@product.price) %>
-
-
-<%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
-
-
-<%= link_to 'Back to Homepage', products_url %><br/>
-
-
-<h3>Other items you may be interested in: </h3>
-
-<% @random.each do |random_product| %>
-
-<%= image_tag(random_product.image) %> <br>
-<%= random_product.title %>
-<%= number_to_currency(random_product.price) %><br>
-<% end %>
+<div class="store">
+    
+      <% @random.each do |random_product| %>
+    <section>
+	  
+	        <div class="image">
+	           <%= image_tag(random_product.image) %>
+	        </div>
+	            
+	        <div class="name_price">
+	            <b><%= link_to random_product.title, product_url(random_product.id) %></b> <span class=price><%= number_to_currency(random_product.price) %></span>
+	        </div>    
+	      
+     </section>
+      <% end %> 
+</div>

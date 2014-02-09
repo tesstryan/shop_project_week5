@@ -18,21 +18,32 @@
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 <!-- END:head -->
+
 <body>
-<!-- START_HIGHLIGHT -->
-  <header>
+  <div class="container">
+    <div class="wrap">
+
+      <nav>
+          <h2><%= link_to "RANDOM HUNT CO.", products_url, :class => "header_link" %></h2>
+          <div class="nav_links">
+              <a href="#">WEAR</a>
+              <a href="#">EAT</a>
+              <a href="#">PLAY</a> 
+              <a href="#">HANG</a>
+              <% @cart = Cart.all  %>
+              <a href="#">CART<div class="cart_count"><%= @cart.count %></div></a>
+          </div>  
+      </nav>
+
+
+          <%= yield %>
     
-    <ul>
-        <li class="site_name"><h2><%= link_to "RANDOM HUNT CO.", 'root_url' %></h2></li>
-        <li><%= link_to "WEAR", '#' %></li>
-        <li><%= link_to "EAT", '#' %></li>
-        <li><%= link_to "PLAY", '#' %></li>
-        <li><%= link_to "HANG", '#' %></li>
-      </ul>
-  </header>  
+ <!--    <footer>
+      <p>RANDOM HUNT CO. © 2014</p>
+    </footer> -->
+    </div>
 
 
-      <%= yield %>
-
+  </div>
 </body>
 </html>

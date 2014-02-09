@@ -2,20 +2,21 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<!-- START_HIGHLIGHT -->
-<h2>Your Cart</h2>
-<table>
+<div class="cart_page">
+
+	<h2>Items currently in your cart</h2>
+
 	<%= render(@cart.line_items) %>
 
-<!-- START_HIGHLIGHT -->
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-<!-- END_HIGHLIGHT -->
-<!-- START_HIGHLIGHT -->
-</table>
-<!-- END_HIGHLIGHT -->
+<div class="cart_totals">
+	<h3>Cart Totals</h3>
+	
+	Total <%= number_to_currency(@cart.total_price) %>
 
-<%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' } %>
+</div>
+
+<br><br>
+
+<%= link_to 'Empty cart', @cart, method: :delete, :class => "button_to_empty", data: { confirm: 'Are you sure?' }%>
+
+</div>
