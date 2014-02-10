@@ -273,6 +273,7 @@ section {
 // CART PAGE 
 
 .cart_page {
+    display: inline-block;
     font-size: 0;
     margin-top: 50px;
     vertical-align: top;
@@ -284,7 +285,7 @@ section {
         font-size: 0;
         display: inline-block;
         margin-top: 30px;
-        @include columnify(7);
+        @include columnify(8);
         margin-right: $gutter_width;
 
 
@@ -320,10 +321,11 @@ section {
     vertical-align: top;
     font-size: 0;
     display: inline-block;
-    @include offset(2);
+    @include offset(1);
     @include columnify(3);
     border: 1px lightgray solid;
     padding: 15px;
+    height: 180px;
     vertical-align: top;
     
     
