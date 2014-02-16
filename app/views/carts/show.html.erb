@@ -5,6 +5,7 @@
 <% if @cart.line_items.count == 0 %>
 <br><br><br>
 <h3>There are no items in your cart, yet. <%= link_to "Keep searching!", products_url%></h3>
+<%= button_to 'Empty Cart', @cart, method: :delete, :class => "button_to_empty"%>
 <% else %>
 
 <div class="cart_page">
@@ -17,21 +18,26 @@
 	<div class="cart_totals">
 		<div class="totals">
 			<h4>Cart Totals</h4>
+
 			<table>
 			
 				<tr>
 				  <td>Taxes:</td>
 				  <td class="table_right">$5.87</td>		
 				 </tr>
+
 				<tr class="table_bottom">
 				  <td>Shipping:</td>
 				  <td class="table_right">$9.99</td>		
 				</tr>
+
 				<tr>
 				  <td>Total:</td>
 				  <td class="table_right"><%= number_to_currency((@cart.total_price) + 9.99 + 5.87) %></td>		
-				  </tr>			
+				</tr>
+
 			</table>
+
 		</div>
 		
 		<div class="checkout">
