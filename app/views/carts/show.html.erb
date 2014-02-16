@@ -14,40 +14,35 @@
 	<%= render(@cart.line_items) %>
 
 	
-<div class="cart_totals">
-	<div class="totals">
-		<h4>Cart Totals</h4>
-		<table>
+	<div class="cart_totals">
+		<div class="totals">
+			<h4>Cart Totals</h4>
+			<table>
+			
+				<tr>
+				  <td>Taxes:</td>
+				  <td class="table_right">$5.87</td>		
+				 </tr>
+				<tr class="table_bottom">
+				  <td>Shipping:</td>
+				  <td class="table_right">$9.99</td>		
+				</tr>
+				<tr>
+				  <td>Total:</td>
+				  <td class="table_right"><%= number_to_currency((@cart.total_price) + 9.99 + 5.87) %></td>		
+				  </tr>			
+			</table>
+		</div>
 		
-			<tr>
-			  <td>Taxes:</td>
-			  <td class="table_right">$5.87</td>		
-			 </tr>
-			<tr class="table_bottom">
-			  <td>Shipping:</td>
-			  <td class="table_right">$9.99</td>		
-			</tr>
-			<tr>
-			  <td>Total:</td>
-			  <td class="table_right"><%= number_to_currency((@cart.total_price) + 9.99 + 5.87) %></td>		
-			  </tr>			
-		</table>
+		<div class="checkout">
+			<%= link_to 'Checkout', store_url, :class => "button_to_checkout"%>
+		</div>
+
 	</div>
-	<div class="checkout">
-		<%= link_to 'Checkout', store_url, :class => "button_to_checkout"%>
-	</div>
-</div>
 
 <br><br>
 
 <%= button_to 'Empty Cart', @cart, method: :delete, :class => "button_to_empty"%>
 
-</div>
-
-
-
 <% end %>
-
-<!-- <footer>
-	<p>RANDOM HUNT CO. © 2014</p>
-</footer> -->
+</div>
